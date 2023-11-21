@@ -6,4 +6,4 @@
  docker run -d --restart always --name flights-postgres --publish 5432:5432
   -e POSTGRES_PASSWORD=secret -e PGDATA=/var/lib/postgresql/data/pgdata 
   -v /home/pouria/pgdata:/var/lib/postgresql/data postgres
-```
+```PGDATA
