@@ -15,3 +15,5 @@ def add_posts():
     lastname = data.get("lastname")
     add_user(name, lastname)
     return "OK"
+
+    
