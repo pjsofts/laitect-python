@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.dialects.postgresql import TEXT
 
 app = Flask(__name__)
 
@@ -10,8 +11,9 @@ db = SQLAlchemy(app)
 class Users(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(1000))
-    lastname = db.Column(db.String(6000))
+    name = db.Column(TEXT)
+    lastname = db.Column(TEXT)
+
 
 @app.route("/users", methods=["GET"])
 def index():
