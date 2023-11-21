@@ -3,11 +3,7 @@
 
 
 ```
- docker run -d \
-    --restart always \
-	--name some-postgres \
-	-e POSTGRES_PASSWORD=mysecretpassword \
-	-e PGDATA=/var/lib/postgresql/data/pgdata \
-	-v /custom/mount:/var/lib/postgresql/data \
-	postgres
+ docker run --rm -d --restart always --name flights-postgres --publish 5432:5432
+  -e POSTGRES_PASSWORD=secret -e PGDATA=/var/lib/postgresql/data/pgdata 
+  -v /home/pouria/pgdata:/var/lib/postgresql/data postgres
 ```
