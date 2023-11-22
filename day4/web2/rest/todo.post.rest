@@ -1,0 +1,7 @@
+POST http://127.0.0.1:5000/todos
+Content-Type: application/json
+
+{
+    "title": "Wash The Dishes",
+    "user_id": 1
+}

@@ -1,4 +1,5 @@
 from models.todo import Todos
+from models.user import Users
 from app import db
 
 
@@ -12,3 +13,9 @@ def get_todos():
         for todo in todos
     ]
     return result
+
+def add_todos(title, user_id):
+    user = Users.query.get(user_id)
+    todo = Todos(title = title, done=False, users_id=user.id)
+    db.session.add(todo)
+    db.session.commit()
