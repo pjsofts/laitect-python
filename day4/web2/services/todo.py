@@ -16,6 +16,13 @@ def get_todos():
 
 def add_todos(title, user_id):
     user = Users.query.get(user_id)
-    todo = Todos(title = title, done=False, users_id=user.id)
+    todo = Todos(title = title, done=False,
+     users_id=user.id)
+    db.session.add(todo)
+    db.session.commit()
+
+def done_todos(id):
+    todo = Todos.query.get(id)
+    todo.done = True
     db.session.add(todo)
     db.session.commit()
