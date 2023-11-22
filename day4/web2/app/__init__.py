@@ -11,4 +11,9 @@ app.config[
 db = SQLAlchemy(app)
 
 from views import user
+from views import todo
+
+from models import todo
+from models import user
+
 print("here")
